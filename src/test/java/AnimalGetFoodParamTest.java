@@ -6,24 +6,24 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class AnimalParamTestGetFood {
+public class AnimalGetFoodParamTest {
 
     // два поля класса: для проверяемой строки и ожидаемого результата
     private final String checkedAnimalKind;
     private final List<String> expectedFood;
 
     // конструктор с двумя параметрами
-    public AnimalParamTestGetFood(String checkedAnimalKind, List<String> expectedFood) {
+    public AnimalGetFoodParamTest(String checkedAnimalKind, List<String> expectedFood) {
         this.checkedAnimalKind = checkedAnimalKind;
         this.expectedFood = expectedFood;
     }
 
     //  метод для получения тестовых данных
-    @Parameterized.Parameters // добавили аннотацию
-    public static Object[][] getTestData() {
+    @Parameterized.Parameters(name = "для \"{0}\" ожидаемый результат \"{1}\"")  // добавили аннотацию
+    public static Object[] getTestData() {
         return new Object[][]{
                 {"Травоядное", List.of("Трава", "Различные растения")},
-                {"Хищник", List.of("Животные", "Птицы", "Рыба")},
+                {"Хищник", List.of("Животные", "Птицы", "Рыба")}
         };
     }
 

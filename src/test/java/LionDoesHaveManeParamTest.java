@@ -5,24 +5,24 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class LionParamTestDoesHaveMane {
+public class LionDoesHaveManeParamTest {
 
     // два поля класса: для проверяемой строки и ожидаемого результата
     private final String checkedSex;
     private final boolean expectedMane;
 
     // конструктор с двумя параметрами
-    public LionParamTestDoesHaveMane(String checkedSex, boolean expectedMane) {
+    public LionDoesHaveManeParamTest(String checkedSex, boolean expectedMane) {
         this.checkedSex = checkedSex;
         this.expectedMane = expectedMane;
     }
 
     //  метод для получения тестовых данных
-    @Parameterized.Parameters // добавили аннотацию
-    public static Object[][] getTestData() {
+    @Parameterized.Parameters(name = "для \"{0}\" ожидаемый результат \"{1}\"") // добавили аннотацию
+    public static Object[] getTestData() {
         return new Object[][]{
                 {"Самец", true},
-                {"Самка", false},
+                {"Самка", false}
         };
     }
 
