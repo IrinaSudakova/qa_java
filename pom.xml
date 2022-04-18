@@ -31,14 +31,14 @@
                 <version>0.8.7</version>
                 <executions>
                     <execution>
-                        <id>jacoco-initialize</id>
+                        <id>jprepare-agent</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                     <execution>
-                        <id>jacoco-site</id>
+                        <id>report</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
@@ -54,11 +54,6 @@
             <artifactId>mockito-core</artifactId>
             <version>4.3.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>1.12.8</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
